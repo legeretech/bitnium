@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitnium</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* Particles.js container */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            z-index: 0;
+        }
+
+        /* Full-page container */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            padding: 15px;
+            z-index: 1; /* Ensure hero content is above particles */
+        }
+
+        /* Background pattern */
+        .hero-background {
+            background-image: url('./images/logos/Group\ 37.png');   
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.2;
+        }
+
+        /* Navigation styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+        }
+
+        .navbar-logo img {
+            width: 150px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        .navbar-actions a {
+            color: #8CC63F;
+            background-color: #273D0F;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .navbar-actions a:hover {
+            background-color: #88cc00;
+        }
+
+        /* Main content styling */
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 3rem;
+            padding-top: 10rem;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Call-to-action button */
+        .hero-button {
+            background-color: #8CC63F;
+            color:#273D0F;
+            padding: 1rem 3rem;
+            font-weight: 700;
+            border-radius: 40px;
+            text-decoration: none;
+        }
+
+        .hero-button:hover {
+            background-color: #88cc00;
+        }
+
+        /* 3D Icon */
+        .hero-3d-icon {
+            position: absolute;
+            right: 3rem;
+            bottom: 2rem;
+            width: 400px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .hero-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 8rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-button {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .hero-3d-icon {
+                width: 250px;
+                right: 1rem;
+                bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle.js background -->
+    <div id="particles-js"></div>
+
+    <div class="hero-section">
+        <!-- Background Image -->
+        <div class="hero-background"></div>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="./images/logos/Group 3.png" alt="Bitnium Logo"> <!-- Replace with your logo URL -->
+            </div>
+            <div class="navbar-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Whitepaper</a>
+                <a href="#">Roadmap</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="navbar-actions">
+                <a href="#">Sign In/Sign Up</a>
+                <a href="#">Buy $BTNM (ERC 20)</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">BITNIUM IS AN WORLD'S<br>TOP MULTI BLOCKCHAIN</h1>
+            <a href="#" class="hero-button">TOKEN ERC20</a>
+            <p class="hero-description">ON ETHEREUM NETWORK ! &<br>POLYGON, ARBITRUM, BINANCE, OPTIMISM AND BASE NETWORK</p>
+        </div>
+
+        <!-- 3D Icon -->
+        <img src="./images/logos/Asset 1xhdpi 3.png" alt="3D Bitnium Icon" class="hero-3d-icon">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        /* Particle.js configuration */
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 58,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00ff77"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 2,
+                        "color": "#008930"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false
+                },
+                "size": {
+                    "value": 2,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
