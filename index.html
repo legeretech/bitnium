@@ -1,175 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitnium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-        body, html {
-            margin: 0;
-            padding: 0px;
-            font-family: 'Poppins', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-        }
+        /* Reset styles */
 
         /* Particles.js container */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            background-color: #000;
-            z-index: 0;
-        }
+       /* Particles.js container */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    background-image: url("https://legeretech.github.io/bitnium/images/logos/Group%2037.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
 
-        /* Full-page container */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            padding: 15px;
-            z-index: 1; /* Ensure hero content is above particles */
-        }
+/* Full-page container */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 2;
+    color: #ffffff;
+}
 
-        /* Background pattern */
-        .hero-background {
-            background-image: url('./images/logos/Group\ 37.png');   
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.2;
-        }
+/* Navigation styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    position: sticky; /* This makes the navbar sticky */
+    top: 0; /* Sticks it to the top of the viewport */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
 
-        /* Navigation styling */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 3rem;
-        }
 
-        .navbar-logo img {
-            width: 150px;
-            margin-right: 10px;
-        }
+.navbar-logo img {
+    width: 150px;
+    margin-right: 10px;
+}
 
-        .navbar-nav {
-            display: flex;
-            gap: 2rem;
-        }
+.navbar-nav {
+    display: flex;
+    gap: 2rem;
+}
 
-        .navbar-nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 300;
-        }
+.navbar-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
 
-        .navbar-actions a {
-            color: #8CC63F;
-            background-color: #273D0F;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
-        }
+.navbar-nav a:hover {
+    color: #8CC63F;
+}
 
-        .navbar-actions a:hover {
-            background-color: #88cc00;
-        }
+.navbar-actions {
+    display: flex;
+    gap: 1rem;
+}
 
-        /* Main content styling */
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-left: 3rem;
-            padding-top: 10rem;
-            z-index: 1;
-            position: relative;
-        }
+.navbar-actions a {
+    color: #8CC63F;
+    background-color: #273D0F;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 500;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
+.navbar-actions a:hover {
+    background-color: #8CC63F;
+    color: #273D0F;
+}
 
-        .hero-description {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 5;
+}
 
-        /* Call-to-action button */
-        .hero-button {
-            background-color: #8CC63F;
-            color:#273D0F;
-            padding: 1rem 3rem;
-            font-weight: 700;
-            border-radius: 40px;
-            text-decoration: none;
-        }
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
 
-        .hero-button:hover {
-            background-color: #88cc00;
-        }
+/* Main content styling */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10rem 3rem 3rem;
+    z-index: 3;
+    max-width: 800px;
+}
 
-        /* 3D Icon */
-        .hero-3d-icon {
-            position: absolute;
-            right: 3rem;
-            bottom: 2rem;
-            width: 400px;
-        }
+.hero-title {
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
+.hero-description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 2rem;
+}
 
-            .hero-content {
-                padding-left: 1rem;
-                padding-right: 1rem;
-                padding-top: 8rem;
-            }
+/* Call-to-action button */
+.hero-button {
+    background-color: #8CC63F;
+    color: #273D0F;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-            .hero-title {
-                font-size: 2.5rem;
-            }
+.hero-button:hover {
+    background-color: #88cc00;
+    transform: scale(1.05);
+}
 
-            .hero-button {
-                padding: 0.8rem 1.5rem;
-            }
+/* 3D Icon */
+.hero-3d-icon {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+    width: 400px;
+    z-index: 3;
+}
 
-            .hero-3d-icon {
-                width: 250px;
-                right: 1rem;
-                bottom: 1rem;
-            }
-        }
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .hero-content {
+        padding: 8rem 2rem 2rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-3d-icon {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-button {
+        padding: 0.8rem 2rem;
+    }
+
+    .hero-3d-icon {
+        width: 300px;
+        right: 2rem;
+        bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-nav,
+    .navbar-actions {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 4;
+    }
+
+    .navbar-nav.active,
+    .navbar-actions.active {
+        display: flex;
+    }
+
+    .navbar-nav a,
+    .navbar-actions a {
+        font-size: 1.2rem;
+        opacity: 1;
+    }
+
+    .hero-content {
+        padding: 6rem 1rem 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-button {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .hero-3d-icon {
+        width: 250px;
+        right: 1rem;
+        bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-button {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .hero-3d-icon {
+        width: 200px;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-3d-icon {
+        width: 150px;
+    }
+}
+
+@media (max-width: 200px) {
+    .navbar-logo img {
+        width: 100px;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.8rem;
+    }
+
+    .hero-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .hero-3d-icon {
+        width: 100px;
+    }
+}
     </style>
 </head>
+
 <body>
-    <!-- Particle.js background -->
+
+
     <div id="particles-js"></div>
 
     <div class="hero-section">
-        <!-- Background Image -->
-        <div class="hero-background"></div>
 
-        <!-- Navigation Bar -->
         <nav class="navbar">
             <div class="navbar-logo">
-                <img src="./images/logos/Group 3.png" alt="Bitnium Logo"> <!-- Replace with your logo URL -->
+                <img src="./images/logos/Group 3.png" alt="Bitnium Logo">
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <div class="navbar-nav">
                 <a href="#">Home</a>
@@ -184,89 +332,359 @@
             </div>
         </nav>
 
-        <!-- Main Content -->
+
         <div class="hero-content">
-            <h1 class="hero-title">BITNIUM IS AN WORLD'S<br>TOP MULTI BLOCKCHAIN</h1>
+            <h1 class="hero-title">BITNIUM IS THE WORLD'S<br>TOP MULTI BLOCKCHAIN</h1>
             <a href="#" class="hero-button">TOKEN ERC20</a>
-            <p class="hero-description">ON ETHEREUM NETWORK ! &<br>POLYGON, ARBITRUM, BINANCE, OPTIMISM AND BASE NETWORK</p>
+            <p class="hero-description">ON ETHEREUM NETWORK! &<br>POLYGON, ARBITRUM, BINANCE, OPTIMISM AND BASE NETWORK
+            </p>
         </div>
 
-        <!-- 3D Icon -->
-        <img src="./images/logos/Asset 1xhdpi 3.png" alt="3D Bitnium Icon" class="hero-3d-icon">
+
+        <img src="https://legeretech.github.io/bitnium/images/logos/Asset%201xhdpi%203.png" alt="3D Bitnium Icon"
+            class="hero-3d-icon">
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        /* Particle.js configuration */
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 58,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#00ff77"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 2,
-                        "color": "#008930"
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false
-                },
-                "size": {
-                    "value": 2,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
+
+    <!-- second section numbers -->
+    <div class="bitnium-section-main">
+        <section class="bitnium-section-1">
+            <h1 class="bitnium-section-1__title-2">How To Start With <span
+                    class="bitnium-section-1__title-2__span-3">Bitnium!</span></h1>
+            <div class="steps-container-4">
+                <div class="step-5">
+                    <div class="step-5__number-6">1</div>
+                    <div class="step-5__content-7">
+                        <h2 class="step-5__content-7__title-8">CREATE WALLET</h2>
+                        <p class="step-5__content-7__description-9">Securely store your Bitnium tokens and other digital
+                            assets in a user-friendly wallet.</p>
+                    </div>
+                </div>
+                <div class="step-5">
+                    <div class="step-5__number-6">2</div>
+                    <div class="step-5__content-7">
+                        <h2 class="step-5__content-7__title-8">BUY</h2>
+                        <p class="step-5__content-7__description-9">Purchase Bitnium tokens directly through the
+                            platform using various payment methods.</p>
+                    </div>
+                </div>
+                <div class="step-5">
+                    <div class="step-5__number-6">3</div>
+                    <div class="step-5__content-7">
+                        <h2 class="step-5__content-7__title-8">TRANSFER</h2>
+                        <p class="step-5__content-7__description-9">Easily send Bitnium tokens to friends, family, or
+                            merchants across the globe.</p>
+                    </div>
+                </div>
+                <div class="step-5">
+                    <div class="step-5__number-6">4</div>
+                    <div class="step-5__content-7">
+                        <h2 class="step-5__content-7__title-8">TRADE</h2>
+                        <p class="step-5__content-7__description-9">Access a wide range of trading pairs and exchange
+                            Bitnium for other cryptocurrencies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 
+    second section number end -->
+    <!-- trading section start  -->
+    <div class="trade-choose-bg">
+        <div class="trading-strategies-main">
+            <section class="trading-strategies">
+                <div class="trading-images">
+                    <img src="./images/logos/Group12.png" alt="Big Logo" class="trading-big-logo">
+                    <div class="trading-small-icons">
+                        <img src="./images/logos/Frame.png" alt="Small Icon 1" class="trading-small-icon">
+                        <img src="./images/logos/Asset 5xhdpi.png" alt="Small Icon 2" class="trading-small-icon">
+                    </div>
+                </div>
+                <div class="trading-content">
+                    <h1>Trading Strategies</h1>
+                    <p>Bitnium (BTNM) trading strategies include active approaches, with options like high-frequency
+                        trading, range trading, and technical analysis with education for active traders. Strategies
+                        involve
+                        buy-and-hold/stake.</p>
+                    <div class="trading-buy-btn-container">
+                        <a href="#" class="trading-buy-btn">BUY BTNM</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- trading section end  -->
+        <!-- choose section start  -->
+        <section class="choose-card-section">
+            <h1 class="choose-section-heading">Why Choose Our Bitnium Token</h1>
+            <div class="choose-cards-container">
+                <div class="choose-card">
+                    <div class="choose-card-header">
+                        <img src="./images/logos/Circles-seven (圆圈).png" alt="Logo 1" class="choose-card-logo">
+                        <h2 class="choose-card-title">DeFi Integration</h2>
+                    </div>
+                    <p class="choose-card-description">Leverage the power of decentralized finance (DeFi) with Bitnium.
+                        Our
+                        token seamlessly integrates with emerging financial technologies, removing third parties and
+                        centralized institutions from your transactions.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-card-header">
+                        <img src="./images/logos/User-positioning (用户定位).png" alt="Logo 2" class="choose-card-logo">
+                        <h2 class="choose-card-title">Identity Protection</h2>
+                    </div>
+                    <p class="choose-card-description">Your security is our priority. Bitnium implements advanced
+                        encryption
+                        and unique, strong password protection for all your devices, ensuring your digital identity
+                        remains
+                        safeguarded at all times.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-card-header">
+                        <img src="./images/logos/Fingerprint (指纹).png" alt="Logo 3" class="choose-card-logo">
+                        <h2 class="choose-card-title">Asset Security & Control</h2>
+                    </div>
+                    <p class="choose-card-description">Built on cutting-edge blockchain technology, Bitnium offers a
+                        secure
+                        digital ledger for all your transactions. Our platform provides unparalleled security and puts
+                        you
+                        in full control of your crypto assets.</p>
+                </div>
+                <div class="choose-card">
+                    <div class="choose-card-header">
+                        <img src="./images/logos/Headset-one (耳机).png" alt="Logo 4" class="choose-card-logo">
+                        <h2 class="choose-card-title">Lifetime Support</h2>
+                    </div>
+                    <p class="choose-card-description">Join the Bitnium community and enjoy 24/7 online support, regular
+                        upgrades, and assistance from our team of technical experts. We're committed to your success in
+                        the
+                        long run.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- choose section end  -->
+
+    <!-- funding section 5th  -->
+    <section class="funding-container-main">
+        <div class="funding-container">
+            <!-- Text Section -->
+            <div class="funding-text-section">
+                <h1>FUNDING ALLOCATION<br>TNM ALLOCATION</h1>
+                <p style="font-family: 'Poppins Black', sans-serif; font-weight: 900; font-size: 38px;"
+                    class="funding-bold-text">1 BTN = 0.000037 BTC</p>
+                <p>The World's 1st ICO Platform, That Offers Rewards and helps investors make it easy to purchase and
+                    sell their tokens.</p>
+            </div>
+
+            <!-- Graphic Section with Image, Overlay, and Logo -->
+            <div class="funding-graphic-section">
+                <div class="funding-image-container">
+                    <!-- The Main Image -->
+                    <img src="./images/logos/Group.png" alt="Funding Allocation Graph">
+                    <!-- The Overlay -->
+                    <div class="funding-overlay"></div>
+                    <!-- The Centered Logo -->
+                    <div class="funding-logo">
+                        <img src="./images/logos/Asset 1xhdpi 3.png" alt="Centered Logo">
+                        <!-- Replace with actual logo path -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- funding section 5th  -->
+
+
+    <!-- pateners and support section   -->
+    <section class="supporters-container-main">
+        <div class="supporters-container">
+            <div class="supporters-title">
+                Partners <br>And <br><span>Supporters</span>
+            </div>
+            <div class="supporters-content">
+                <h2 class="supporters-content-h2" style="color: #7eff00;">What is Blockchain Technology?</h2>
+                <p class="supporters-content-p">Blockchain technology is an advanced database mechanism that allows
+                    transparent information sharing within a business network. A blockchain database stores data in
+                    blocks that are linked together in a chain.</p>
+                <div class="supporters-highlight">
+                    <strong>Blockchain defined:</strong> Blockchain is a shared, immutable ledger that facilitates the
+                    process of recording transactions and tracking assets in a business network.
+                </div>
+                <p class="supporters-content-p">A blockchain is a distributed database or ledger shared among a computer
+                    network's nodes.</p>
+            </div>
+        </div>
+        <div class="supporters-cards-grid">
+            <div class="supporters-card-grid">
+                <h2>Bitcoin</h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>Ethereum</h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>Polygon</h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+            <div class="supporters-card-grid">
+                <h2>BNB Smart Chain
+                </h2>
+                <p>Bitcoin is the first decentralized cryptocurrency. Nodes in the peer-to-peer bitcoin network verify
+                    transactions through cryptography and record them in a public distributed ledger, called a
+                    blockchain, without central oversight.</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- pateners and support section   -->
+
+
+    <!-- contact section -->
+    <div class="contact-container">
+        <!-- Left Section with "Get In Touch" -->
+        <div class="contact-left">
+            Get In<br>Touch
+        </div>
+        <!-- Right Section with Form and Contact Info -->
+        <div class="contact-right">
+            <form class="contact-form">
+                <!-- Name and Email stacked vertically, Message aligned to the right -->
+                <div class="contact-input-fields">
+                    <div class="contact-input-group">
+                        <input type="text" placeholder="Name" class="contact-input">
+                        <input type="email" placeholder="Email" class="contact-input">
+                    </div>
+                    <textarea rows="1" placeholder="Message" class="contact-textarea"></textarea>
+                </div>
+
+                <!-- Button and Email Links Aligned in a Row -->
+                <div class="contact-button-email-container">
+
+                    <div class="contact-info">
+                        <a href="mailto:support@bitnium.org" class="contact-email-link">
+                            <img src="./images/logos/mail.png" alt="Email Icon">support@bitinium.org
+                        </a>
+                        <a href="mailto:admin@bitinium.org" class="contact-email-link">
+                            <img src="./images/logos/mail.png" alt="Email Icon">admin@bitinium.org
+                        </a>
+                    </div>
+                    <button type="submit" class="contact-send-button">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- contact section -->
+
+
+    <!-- footer section -->
+    <section class="footer-main-section">
+        <footer class="footer-1">
+            <div class="footer-download-section-2">
+                <h2 class="footer-download-section-2__title-3">DOWNLOAD MOBILE APP</h2>
+                <div class="footer-store-buttons-4">
+                    <a href="#"><img class="footer-store-buttons-4__img-5" src="./images/logos/Layer 2.png"
+                            alt="Google Play"></a>
+                    <a href="#"><img class="footer-store-buttons-4__img-5" src="./images/logos/Layer 21.png"
+                            alt="App Store"></a>
+                </div>
+            </div>
+
+            <div class="footer-links-and-icons-6">
+                <div class="footer-links-7">
+                    <a class="footer-links-7__link-8" href="#">BTNM Token Info | </a>
+                    <a class="footer-links-7__link-8" href="#">Explorer | </a>
+                    <a class="footer-links-7__link-8" href="#">log</a>
+                </div>
+                <div class="footer-social-icons-9">
+                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-pinterest"></i></a>
+                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-tiktok"></i></a>
+                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-facebook"></i></a>
+                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-copyright-11">
+                <p>Copyright © 2023. All Rights Reserved Bitnium.
+                    <a class="footer-copyright-11__link-12" href="#">Terms of Service</a> | <a
+                        class="footer-copyright-11__link-12" href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </footer>
+
+        <!-- footer section -->
+
+
+
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
