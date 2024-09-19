@@ -1698,7 +1698,7 @@ margin-top: -190px;
     content: "";
     width: 2px;
     height: 100%;
-    background-color: #29d323;
+    background-color: #8cc63f;
     position: absolute;
     right: calc(100% + 9px);
     top: 0;
@@ -1720,7 +1720,7 @@ margin-top: -190px;
   }
   .box-container li > div > div {
     padding: 20px;
-    border: 1px solid#7BD341;
+    border: 1px solid#8cc63f;
     position: relative;
     display: flex;
     display: -webkit-flex;
@@ -1768,11 +1768,11 @@ margin-top: -190px;
   }
   .box-container li > div > div > div {
     padding: 20px;
-    background: rgb(60, 240, 47);
+    background: #8cc63f;
     background: linear-gradient(
       45deg,
-      rgb#7BD341 0%,
-      rgb#7BD341 0%
+      rgb#8cc63f 0%,
+      rgb#8cc63f 0%
     );
     text-align: center;
     font-size: 16px;
@@ -1793,7 +1793,7 @@ margin-top: -190px;
     top: 50%;
     transform: translateY(-50%) rotate(180deg);
     display: block;
-    color: #7BD341;
+    color: #8cc63f;
   }
   .box-container li:nth-child(6n + 4) {
     grid-column-start: 3;
