@@ -5,345 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitnium</title>
+    <meta name="description" content="Bitnium is the world's leading multi-blockchain token on Ethereum, Polygon, Arbitrum, Binance, Optimism, and Base networks. Secure, trade, and leverage decentralized finance (DeFi) with Bitnium." />
+<meta name="keywords" content="Bitnium, ERC20, Ethereum, Blockchain Token, DeFi, Cryptocurrency, Trade, Buy Bitnium, Secure Wallet, Blockchain Integration" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Bitnium" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-        /* Reset styles */
-
-        /* Particles.js container */
-       /* Particles.js container */
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background-color: #000000;
-    background-image: url("https://legeretech.github.io/bitnium/images/logos/Group%2037.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-
-/* Full-page container */
-.hero-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    max-width: 1300px;
-    margin: 0 auto;
-    overflow: hidden;
-    z-index: 2;
-    color: #ffffff;
-}
-
-/* Navigation styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
-    position: sticky; /* This makes the navbar sticky */
-    top: 0; /* Sticks it to the top of the viewport */
-    z-index: 1000; /* Ensures the navbar stays on top of other content */
-}
-
-
-.navbar-logo img {
-    width: 150px;
-    margin-right: 10px;
-}
-
-.navbar-nav {
-    display: flex;
-    gap: 2rem;
-}
-
-.navbar-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 300;
-    transition: color 0.3s ease;
-}
-
-.navbar-nav a:hover {
-    color: #8CC63F;
-}
-
-.navbar-actions {
-    display: flex;
-    gap: 1rem;
-}
-
-.navbar-actions a {
-    color: #8CC63F;
-    background-color: #273D0F;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    display: inline-block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar-actions a:hover {
-    background-color: #8CC63F;
-    color: #273D0F;
-}
-
-/* Hamburger menu */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #ffffff;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-/* Main content styling */
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10rem 3rem 3rem;
-    z-index: 3;
-    max-width: 800px;
-}
-
-.hero-title {
-    font-size: 4rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: 2rem;
-}
-
-.hero-description {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-top: 2rem;
-}
-
-/* Call-to-action button */
-.hero-button {
-    background-color: #8CC63F;
-    color: #273D0F;
-    padding: 1rem 3rem;
-    font-weight: 700;
-    border-radius: 40px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero-button:hover {
-    background-color: #88cc00;
-    transform: scale(1.05);
-}
-
-/* 3D Icon */
-.hero-3d-icon {
-    position: absolute;
-    right: 3rem;
-    bottom: 3rem;
-    width: 400px;
-    z-index: 3;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .hero-content {
-        padding: 8rem 2rem 2rem;
-    }
-
-    .hero-title {
-        font-size: 3.5rem;
-    }
-
-    .hero-3d-icon {
-        width: 350px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .hero-button {
-        padding: 0.8rem 2rem;
-    }
-
-    .hero-3d-icon {
-        width: 300px;
-        right: 2rem;
-        bottom: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .navbar-nav,
-    .navbar-actions {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        z-index: 4;
-    }
-
-    .navbar-nav.active,
-    .navbar-actions.active {
-        display: flex;
-    }
-
-    .navbar-nav a,
-    .navbar-actions a {
-        font-size: 1.2rem;
-        opacity: 1;
-    }
-
-    .hero-content {
-        padding: 6rem 1rem 1rem;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-button {
-        padding: 0.8rem 1.5rem;
-    }
-
-    .hero-3d-icon {
-        width: 250px;
-        right: 1rem;
-        bottom: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-button {
-        padding: 0.6rem 1.2rem;
-    }
-
-    .hero-3d-icon {
-        width: 200px;
-    }
-}
-
-@media (max-width: 320px) {
-    .hero-title {
-        font-size: 1.5rem;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-    }
-
-    .hero-button {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .hero-3d-icon {
-        width: 150px;
-    }
-}
-
-@media (max-width: 200px) {
-    .navbar-logo img {
-        width: 100px;
-    }
-
-    .hero-title {
-        font-size: 1.2rem;
-    }
-
-    .hero-description {
-        font-size: 0.8rem;
-    }
-
-    .hero-button {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
-
-    .hero-3d-icon {
-        width: 100px;
-    }
-}
-    </style>
 </head>
 
 <body>
-
-
     <div id="particles-js"></div>
-
     <div class="hero-section">
-
         <nav class="navbar">
             <div class="navbar-logo">
                 <img src="./images/logos/Group 3.png" alt="Bitnium Logo">
             </div>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-            <div class="navbar-nav">
+            <div class="navbar-nav" id="navbarNav">
                 <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Whitepaper</a>
-                <a href="#">Roadmap</a>
-                <a href="#">Contact</a>
+                <a href="#about-us">About</a>
+                <a target="_blank" href="https://bitnium.org/whitepaper/">Whitepaper</a>
+                <a href="#road-map">Roadmap</a>
+                <a href="#contact-us">Contact</a>
             </div>
-            <div class="navbar-actions">
-                <a href="#">Sign In/Sign Up</a>
-                <a href="#">Buy $BTNM (ERC 20)</a>
+            <div class="responive-nav" id="navbarActions">
+                <a href="#">Home</a>
+                <a href="#about-us">About</a>
+                <a target="_blank" href="https://bitnium.org/whitepaper/">Whitepaper</a>
+                <a href="#road-map">Roadmap</a>
+                <a href="#contact-us">Contact</a>
+            </div>
+            <div class="navbar-actions" id="navbarActions">
+                <a target="_blank" href="https://bitnium.org/wallet/login">Sign In/Sign Up</a>
+                <a target="_blank" href="https://bitnium.org/wallet/login">Buy $BTNM (ERC 20)</a>
             </div>
         </nav>
-
-
         <div class="hero-content">
             <h1 class="hero-title">BITNIUM IS THE WORLD'S<br>TOP MULTI BLOCKCHAIN</h1>
             <a href="#" class="hero-button">TOKEN ERC20</a>
             <p class="hero-description">ON ETHEREUM NETWORK! &<br>POLYGON, ARBITRUM, BINANCE, OPTIMISM AND BASE NETWORK
             </p>
         </div>
-
-
         <img src="https://legeretech.github.io/bitnium/images/logos/Asset%201xhdpi%203.png" alt="3D Bitnium Icon"
             class="hero-3d-icon">
     </div>
+    
 
 
     <!-- second section numbers -->
@@ -390,14 +102,14 @@
     <!-- 
     second section number end -->
     <!-- trading section start  -->
-    <div class="trade-choose-bg">
-        <div class="trading-strategies-main">
+    <div  class="trade-choose-bg">
+        <div id="about-us" class="trading-strategies-main">
             <section class="trading-strategies">
                 <div class="trading-images">
-                    <img src="./images/logos/Group12.png" alt="Big Logo" class="trading-big-logo">
+                    <img src="./images/logos/New Project (3).png" alt="Big Logo" class="trading-big-logo">
                     <div class="trading-small-icons">
-                        <img src="./images/logos/Frame.png" alt="Small Icon 1" class="trading-small-icon">
-                        <img src="./images/logos/Asset 5xhdpi.png" alt="Small Icon 2" class="trading-small-icon">
+                        <!-- <img src="./images/logos/Frame.png" alt="Small Icon 1" class="trading-small-icon">
+                        <img src="./images/logos/Asset 5xhdpi.png" alt="Small Icon 2" class="trading-small-icon"> -->
                     </div>
                 </div>
                 <div class="trading-content">
@@ -465,6 +177,246 @@
     </div>
 
     <!-- choose section end  -->
+
+
+<!-- roadmap -->
+ <style>
+    @media (max-width: 768px) {
+.Bitnium-Strategy-h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+}
+    }
+ </style>
+<h2 class="Bitnium-Strategy-h2" style="color: white; display: flex;justify-content: center;">Bitnium Strategy 
+    & Project Plan
+    </h2>
+<div id="road-map" style="display: flex; justify-content: center;align-items: center; margin-bottom: 100px; ">
+
+<div class="box-section">
+   
+    <div class="container">
+      <ul class="box-container">
+        <li>
+          <div>
+            <div>
+              <div>April 2023<br>Website Development</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>May 2023 <br>
+                BTNM Website Live. BRC20 Token Creation</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>June 2023 <br>
+                Mobile App Development Stage 1</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>July 2023 <br>
+                Mobile App Development Stage 2</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>August 2023<br>
+                Mobile App Development Stage 3</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>October 2023<br>
+                Mobile App Development Stage 4</div>
+             
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>November 2023 <br>
+                Mobile App Development Stage 4</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>December 2023 <br>
+                Mobile App Development Stage 5</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>Jan 2024<br>
+                Mobile App Development Stage 6</div>
+              
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>Feb 2024<br>
+                Mobile App Development Stage 7  </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>March 2024 <br>
+                Multi Network Wallet development (Alpha)</div>
+          
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>April 2024<br>
+                Multi Network Wallet development (Beta)</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>April 2024<br>
+                Multi Network DEX Alpha development.</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>April 2024<br>
+                Multi Network Wallet Launch</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>April 2024 <br>
+                BTNM token Creation and Launch Whitepaper release Ethereum DEX Launch</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>April 2024<br>
+                Bitnium marketing, Listing on Coinmarketcap & Coingecko.</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>April 2024<br>
+                Mobile App Release. Polygon DEX Launch</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div>
+              <div>April 2024 <br>
+                Arbitrum DEX Launch.</div>
+            </div>
+          </div>
+        </li>
+        <li>
+            <div>
+              <div>
+                <div>April 2024<br>
+                    Binance DEX Launch.</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div>
+                <div>April 2024<br>
+                    Base DEX Launch.</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div>
+                <div>April 2025<br>
+                    Optimism DEX Launch.</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div>
+                <div>April 2025 <br>
+                    Bitnium blockchain development Stage 1.</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div>
+                <div>April 2025 <br>
+                    Bitnium blockchain development Stage 2.</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div>
+                <div>April 2025<br>
+                    Roadmap release2025-2026.</div>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  var count = $(".box-container").find("li").length;
+var x = 3;
+var y = count % x;
+if (y == 1) {
+  $(".box-container").append(
+    '<li class="before-none"><div></div></li> <li class="before-none"><div></div></li>'
+  );
+}
+if (y == 2) {
+  $(".box-container").append('<li class="before-none"><div></div></li>');
+}
+
+</script>
+
+<!-- roadmap -->
+
+
+
+
 
     <!-- funding section 5th  -->
     <section class="funding-container-main">
@@ -605,7 +557,7 @@
 
 
     <!-- contact section -->
-    <div class="contact-container">
+    <div id="contact-us" class="contact-container">
         <!-- Left Section with "Get In Touch" -->
         <div class="contact-left">
             Get In<br>Touch
@@ -661,13 +613,13 @@
                     <a class="footer-links-7__link-8" href="#">log</a>
                 </div>
                 <div class="footer-social-icons-9">
-                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-pinterest"></i></a>
-                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-tiktok"></i></a>
-                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-facebook"></i></a>
-                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="footer-social-icons-9__link-10" href="#"><i class="fab fa-youtube"></i></a>
+                    <a target="_blank" class="footer-social-icons-9__link-10" href="https://t.me/Bitnium"><i class="fab fa-telegram"></i></a>
+                    <a target="_blank" class="footer-social-icons-9__link-10" href="https://github.com/Bitnium-BTNM"><i class="fab fa-github"></i></a>
+                    <a target="_blank" class="footer-social-icons-9__link-10" href="https://medium.com/@bitnium.btnm">   <i class="fab fa-">M</i></a>
+                    <a target="_blank" class="footer-social-icons-9__link-10" href="https://www.facebook.com/people/Bitnium-Btnm/pfbid02MBcaFQFykEbhu1FT3EPHKgW2yStcBQs7Ns2YjgtSDyZs4U3WZSmxxz9uKPQk9zDLl/"><i class="fab fa-facebook"></i></a>
+                    <a target="_blank" class="footer-social-icons-9__link-10" href="https://www.instagram.com/bitnium.btnm/"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" class="footer-social-icons-9__link-10" href="https://x.com/Bitnium_BTNM"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" class="footer-social-icons-9__link-10" href="https://www.youtube.com/channel/UCWx72brx2KGZ24b52ZP94Kw"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
 
